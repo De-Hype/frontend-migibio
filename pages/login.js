@@ -6,6 +6,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
+import { Backend_Url } from "../utils/server";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -22,11 +24,15 @@ const Login = () => {
   const onLogin = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${Backend_Url}/login`, {
+      const result = await axios.post(`${Backend_Url}/login`, {
         email,
         password,
       });
-        if (Cookies.get(activeUser)) {
+      const cookie_Data = await result.data.activeUser
+      console.log(cookie_Data)
+      Cookies.set("activeUser", cookie_Data )
+      // console.log(result)
+        if (Cookies.get('activeUser') == cookie_Data) {
          Cookies.set("isLoggedIn", "true");
          router.push("/");
         } else {

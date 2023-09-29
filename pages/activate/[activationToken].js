@@ -7,11 +7,17 @@ import Router, { useRouter } from "next/router";
 import { AiOutlineHdd } from "react-icons/ai";
 import Link from "next/link";
 
+
 const activate = () => {
   const [success, setSuccess] = useState(null);
   const router = useRouter()
-  
-  const {activationToken} =  router.query;
+  const {activationToken} =  router.query
+  useEffect(() => {
+    if (Cookies.get("isLoggedIn") === "true") {
+      Router.push("/login");
+    }
+ 
+  console.log(activationToken)
   const onLoad = async () => {
     
      
@@ -30,14 +36,8 @@ const activate = () => {
         
       }
   };
-  
-  
-  useEffect(() => {
-    if (Cookies.get("isLoggedIn") === "true") {
-      Router.push("/login");
-    }
     onLoad()
-  }, []);
+  }, [activationToken]);
 
   return (
     <>
@@ -57,7 +57,7 @@ const activate = () => {
           </>
         ) : (
           <p className="text-center text-white text-2xl">
-            Inavlid Account Verification Link or Token
+            
           </p>
         )}
       </div>

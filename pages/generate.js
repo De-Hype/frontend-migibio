@@ -10,6 +10,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Backend_Url } from "../utils/server";
+import Cookies from "js-cookie";
 
 const Generate = () => {
   const [text, setText] = useState("");

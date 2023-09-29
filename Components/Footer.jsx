@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="flex items-center">
         <h3 className="pr-2 font-semibold">Hosted On Vercel</h3>
         <h3 className="font-black text-xl">|</h3>
-        <h3 className="pl-2 font-normal"><Link className="font-bold" href='/generate'>David Hype</Link> {date.getFullYear()}</h3>
+        <h3 className="pl-2 font-normal"><a className="font-bold" href='https://david-hype.netlify.app'>David Hype</a> {date.getFullYear()}</h3>
       </div>
     </div>
   )

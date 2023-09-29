@@ -38,7 +38,7 @@ const register = () => {
               progress: undefined,
               theme: "light",
             });
-            console.log('Account Created')
+            // console.log('Account Created')
             router.push('/login')
         } catch (error) {
             console.log(error)

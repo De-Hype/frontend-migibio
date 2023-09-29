@@ -1,7 +1,11 @@
-import { Router } from "next/router";
+import { useRouter } from "next/router";
 import { AiOutlineCopy, AiOutlineRocket } from "react-icons/ai";
 
 const Generator = () => {
+  const router = useRouter()
+  const changePage =()=>{
+    router.push('/generate')
+  }
  
   return (
     <div className="pt-6">
@@ -24,7 +28,7 @@ const Generator = () => {
               type="submit"
               className="px-4 py-1 font-bold outline-none rounded-sm my-3 w-full bg-black text-white cursor-pointer"
               value="Generate"
-              
+              onClick={changePage}
             />
           </div>
 
