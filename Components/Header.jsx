@@ -9,13 +9,13 @@ const Header = () => {
         <h3 className="text-base font-bold mr-2">MigiBio</h3>
         <AiOutlineThunderbolt />
         </Link>
-      <div className="flex items-center">
+      {/* <div className="flex items-center">
         <div id="dark mode" className="mr-3">
           <AiOutlineSubnode className="cursor-pointer"/>
-        </div>
+        </div> */}
         
         <AiOutlineUser className="cursor-pointer"/>
-      </div>
+      {/* </div> */}
       
     </header>
   );
