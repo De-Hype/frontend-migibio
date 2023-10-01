@@ -28,6 +28,7 @@ const register = () => {
              await axios.post(`${Backend_Url}/register`, {
                  fullName, username, email, password
             })
+            router.push('/login')
             toast.success("Please Check Email For Account Activation Link", {
               position: "top-center",
               autoClose: 5000,
@@ -39,9 +40,9 @@ const register = () => {
               theme: "light",
             });
             // console.log('Account Created')
-            router.push('/login')
         } catch (error) {
             console.log(error)
+            alert('Error Occured In Account Creation')
         }
     }
 

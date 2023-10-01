@@ -50,6 +50,7 @@ const Login = () => {
         });
     } catch (error) {
       console.error(error);
+      alert('Error Occured While Loggin In')
     }
   };
 
