@@ -34,6 +34,7 @@ const Login = () => {
       // console.log(result)
         if (Cookies.get('activeUser') == cookie_Data) {
          Cookies.set("isLoggedIn", "true");
+      alert('Login Succesful');
 toast.success("Login Successful", {
           position: "top-center",
           autoClose: 5000,
