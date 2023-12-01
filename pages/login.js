@@ -34,11 +34,7 @@ const Login = () => {
       // console.log(result)
         if (Cookies.get('activeUser') == cookie_Data) {
          Cookies.set("isLoggedIn", "true");
-         router.push("/");
-        } else {
-         console.log("You are a piece of shit");
-        }
-        toast.success("Login Successful", {
+toast.success("Login Successful", {
           position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,
@@ -47,7 +43,12 @@ const Login = () => {
           draggable: true,
           progress: undefined,
           theme: "light",
-        });
+        });         
+         router.push("/");
+        } else {
+         console.log("You are a piece of shit");
+        }
+        
     } catch (error) {
       console.error(error);
       alert('Error Occured While Loggin In')
