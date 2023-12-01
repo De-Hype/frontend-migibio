@@ -34,36 +34,18 @@ const Login = () => {
       // console.log(result)
         if (Cookies.get('activeUser') == cookie_Data) {
          Cookies.set("isLoggedIn", "true");
-<<<<<<< HEAD
          toast.success("Login Successful", {
            position: "top-center",
            autoClose: 5000,
            hideProgressBar: false,
            closeOnClick: true,
-=======
-      alert('Login Succesful');
-toast.success("Login Successful", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
->>>>>>> ac2b8d3e85424f4074c96b4b647c09a0a01053dd
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
           theme: "light",
-<<<<<<< HEAD
         });
            router.push("/");
       } 
-=======
-        });         
-         router.push("/");
-        } else {
-         console.log("You are a piece of shit");
-        }
-        
->>>>>>> ac2b8d3e85424f4074c96b4b647c09a0a01053dd
     } catch (error) {
       toast.error("Error Occured While Trying To Log In", {
         position: "top-center",
