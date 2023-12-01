@@ -28,7 +28,12 @@ const register = () => {
              await axios.post(`${Backend_Url}/register`, {
                  fullName, username, email, password
             })
+<<<<<<< HEAD
             toast.success("Please Check Email For Account Activation Link", {
+=======
+            
+           toast.success("Please Check Email For Account Activation Link", {
+>>>>>>> ac2b8d3e85424f4074c96b4b647c09a0a01053dd
               position: "top-center",
               autoClose: 5000,
               hideProgressBar: false,
@@ -38,7 +43,11 @@ const register = () => {
               progress: undefined,
               theme: "light",
             });
+<<<<<<< HEAD
             router.push('/login');
+=======
+            router.push('/login')
+>>>>>>> ac2b8d3e85424f4074c96b4b647c09a0a01053dd
             // console.log('Account Created')
         } catch (error) {
             console.log(error)
