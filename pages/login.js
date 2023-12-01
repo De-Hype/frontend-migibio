@@ -34,23 +34,29 @@ const Login = () => {
       // console.log(result)
         if (Cookies.get('activeUser') == cookie_Data) {
          Cookies.set("isLoggedIn", "true");
-         router.push("/");
-        } else {
-         console.log("You are a piece of shit");
-        }
-        toast.success("Login Successful", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
+         toast.success("Login Successful", {
+           position: "top-center",
+           autoClose: 5000,
+           hideProgressBar: false,
+           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
           theme: "light",
         });
+           router.push("/");
+      } 
     } catch (error) {
-      console.error(error);
-      alert('Error Occured While Loggin In')
+      toast.error("Error Occured While Trying To Log In", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
 
@@ -97,10 +103,7 @@ const Login = () => {
             value="Log In"
           />
         </form>
-        <p className=" text-lg  cursor-pointer hover:text-stone-400">
-          <Link href="forgotten-password">Forgot Password</Link>
-        </p>
-        <p className="text-center font-bold text-xl py-3">Or</p>
+        
         <p className=" text-lg  cursor-pointer hover:text-stone-400">
           <Link href="/register">Register</Link>
         </p>
